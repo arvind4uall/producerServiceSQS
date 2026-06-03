@@ -1,0 +1,16 @@
+server:
+  port: 8080
+
+spring:
+  cloud:
+    aws:
+      region:
+        static: ap-south-1
+      # No credentials block here — Spring will automatically pick up
+      # whatever is configured in your ~/.aws/credentials file (via aws configure)
+
+# These are our two queue names — we reference these in the code
+app:
+  queues:
+    main: order-queue
+    dlq: order-queue-dlq
